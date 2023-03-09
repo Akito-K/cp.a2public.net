@@ -1,0 +1,43 @@
+$headerHeight: 50px;
+// URL
+$url : '';
+
+// Image File Path
+$imgdir : '#{$url}/shared/images/_raw';
+
+// Font
+$notoSans: 'Noto Sans JP', sans-serif;
+
+// Color
+$black          : #222222;
+$darkGray       : #66725E;
+//$semiDarkGray : #888888;
+$gray           : #979797;
+$mediumGray     : #cccccc;
+$lightGray      : #f1f1f1;
+//$whiteGray    : #f6f6f6;
+$white          : #ffffff;
+$alertRed       : #ffdddd;
+$softOrange     : #e58653;
+$lightOrange    : #FCEBDA;
+$blue           : #4A90EC;
+
+$linkBlue       : #01069A;
+$linkRed        : #FF2424;
+
+$adminGreen     : #0E6802;
+$manageGreen    : #4B7A46;
+$presidentGreen : #25AC0A;
+$freshGreen     : #24BD06;
+$lightGreen     : #E3F5DF;
+$darkRed        : #C13333;
+$lightRed       : #f5dfe2;
+
+$statusDraft    : #D5BD0B;
+$statusPublic   : #5BA4CF;
+$statusClosed   : $gray;
+
+
+// Property
+$opacity: 0.7;
+

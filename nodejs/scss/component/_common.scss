@@ -1,0 +1,72 @@
+@use '../config/variable' as var;
+
+
+* {
+    box-sizing: border-box;
+    word-break: break-all;
+}
+body {
+    font-family: var.$notoSans;
+    margin: 0;
+    color: var.$black;
+    letter-spacing: 0.02em;
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+p {
+    margin-block-start: 0;
+}
+dd {
+    margin-left: 0;
+}
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+a,
+button {
+    cursor: pointer;
+    &:hover {
+        opacity: var.$opacity;
+    }
+}
+label.select-arrow {
+    position: relative;
+    &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 8px;
+        right: 13px;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid var.$freshGreen;
+        border-bottom: 2px solid var.$freshGreen;
+        transform: rotate(45deg);
+        pointer-events: none;
+    }
+    &--fake {
+        &::after {
+            border-right-color: var.$lightGray;
+            border-bottom-color: var.$lightGray;
+        }
+    }
+    select {
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 6px 40px 6px 13px;
+        appearance: none;
+        &:hover {
+            opacity: var.$opacity;
+        }
+    }
+}

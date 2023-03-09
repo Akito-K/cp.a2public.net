@@ -1,0 +1,78 @@
+@use '../config/variable' as var;
+@use '../config/mixin' as mixin;
+
+// 共通
+@media all {
+    .page-title {
+        padding-top: 30px;
+        &__body {
+            text-align: center;
+            font-weight: bold;
+            &--type-md {
+                font-size: 20px;
+                margin-bottom: 40px;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 30px;
+                    height: 2px;
+                    background-color: var.$freshGreen;
+                    bottom: -10px;
+                    left: 50%;
+                    margin-left: -15px;
+                }
+            }
+            &--type-sm {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            &--color-orange {
+                &::after {
+                    background-color: var.$softOrange;
+                }
+            }
+        }
+        &__status {
+            margin-bottom: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var.$white;
+            width: 100px;
+            padding: 2px 2px;
+            text-align: center;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            &[data-status="draft"] {
+                background-color: var.$statusDraft;
+            }
+            &[data-status="public"] {
+                background-color: var.$statusPublic;
+            }
+            &[data-status="closed"] {
+                background-color: var.$statusClosed;
+            }
+        }
+        &__to-edit {
+            @include mixin.wrapper(500px);
+            text-align: right;
+            padding-right: 10px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}

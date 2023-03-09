@@ -1,0 +1,40 @@
+@use '../../config/variable' as var;
+@use '../../config/mixin' as mixin;
+@use '../../config/fontawesomw' as fa;
+
+// 共通
+@media all {
+    .section {
+        &__signup {
+            @include mixin.wrapper(500px);
+            p {
+                margin-bottom: 50px;
+            }
+            &__title {
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            &__subject {
+                border: 1px solid var.$adminGreen;
+                padding: 15px 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+    .section {
+    }
+}
+
+// スマホ 横
+// TAB 縦
+// TAB 横
+// PC
+@media(min-width: 768px) {
+    .section {
+    }
+}

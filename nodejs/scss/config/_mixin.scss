@@ -1,0 +1,57 @@
+@use 'animation';
+
+@mixin wrapper($maxWidth: 600px) {
+    width: 100%;
+    max-width: $maxWidth;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin calcMinusHeight($a, $b) {
+    height: calc($a - $b);
+}
+
+@mixin mincho(){
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "ＭＳ 明朝", serif;
+}
+@mixin transition($sec:0.2) {
+    -webkit-transition: all #{$sec}s ease-in-out;
+    -moz-transition: all #{$sec}s ease-in-out;
+    -ms-transition: all #{$sec}s ease-in-out;
+    -o-transition: all #{$sec}s ease-in-out;
+    transition: all #{$sec}s ease-in-out;
+}
+@mixin bgCover() {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@mixin bgContain() {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@mixin passwordEye() {
+    position: relative;
+    i {
+        position: absolute;
+        width: 20px;
+        text-align: center;
+        right: 15px;
+        top: 13px;
+        display: none;
+        &.show {
+            display: inline-block;
+        }
+    }
+}
+@mixin fadeOut($sec: 0.5s) {
+    opacity: 0;
+    z-index: -1;
+    &.show {
+        animation-name: fadeOut;
+        animation-duration: $sec;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+    }
+}

@@ -1,0 +1,64 @@
+@use '../config/variable' as var;
+@use '../config/mixin' as mixin;
+@use '../config/fontawesomw' as fa;
+
+// 共通
+@media all {
+    form {
+        display: inline;
+    }
+    input {
+        &[type="text"],
+        &[type="tel"],
+        &[type="email"],
+        &[type="password"] {
+            width: 100%;
+            padding: 6px 13px;
+            border: 1px solid #ccc;
+        }
+        &[type="date"],
+        &[type="time"] {
+            width: 45%;
+            padding: 6px 13px;
+            border: 1px solid #ccc;
+        }
+        &[type="file"] {
+            display: none;
+        }
+    }
+    textarea {
+        width: 100%;
+        padding: 6px 13px;
+        border: 1px solid #ccc;
+        min-height: 120px;
+    }
+
+    .alert {
+        padding: 5px 10px;
+        background-color: var.$alertRed;
+        color: var.$darkRed;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .alert-parent {
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-bottom: 30px;
+        @include mixin.wrapper(800px);
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}

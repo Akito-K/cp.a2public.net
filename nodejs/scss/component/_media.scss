@@ -1,0 +1,25 @@
+// スマホ 縦
+@media(max-width: 767px) {
+    .tab,
+    .pc {
+        display: none;
+    }
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+    .sp,
+    .pc {
+        display: none;
+    }
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+    .sp,
+    .tab {
+        display: none;
+    }
+}

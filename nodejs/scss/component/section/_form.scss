@@ -1,0 +1,130 @@
+@use '../../config/variable' as var;
+@use '../../config/mixin' as mixin;
+@use '../../config/fontawesomw' as fa;
+
+// 共通
+@media all {
+    .section {
+        &__form {
+            @include mixin.wrapper(500px);
+            padding: 0 10px;
+            margin-bottom: 50px;
+            dl {
+                margin-bottom: 20px;
+            }
+            dt {
+                font-size: 14px;
+                color: var.$freshGreen;
+                margin-bottom: 5px;
+                &.must {
+                    &::after {
+                        content: '*必須';
+                        color: var.$linkRed;
+                        font-size: 14px;
+                        padding-left: 10px;
+                    }
+                }
+            }
+            &__images {
+                display: flex;
+                gap: 10px;
+                padding-top: 10px;
+            }
+            &__image {
+                width: calc(100% / 3);
+                border: 1px dashed var.$gray;
+                position: relative;
+                &:has(> span) {
+                    border: 1px solid var.$gray;
+                }
+                &.has-close {
+                    &:has(> span) {
+                        &::after {
+                            position: absolute;
+                            top: -3px;
+                            right: 5px;
+                            display: inline-block;
+                            font-size: 24px;
+                            @include fa.close;
+                            color: var.$gray;
+                        }
+                    }
+                }
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 0;
+                    padding-top: calc(100% * 100 / 160);
+                    @include mixin.bgContain;
+                    position: relative;
+                }
+                em {
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    padding: 2px 2px;
+                    font-size: 12px;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                i {
+                    display: block;
+                    width: 100%;
+                    height: 0;
+                    padding-top: calc(100% * 100 / 160);
+                    @include mixin.bgContain;
+                    position: relative;
+                    background-image: url(/shared/images/_raw/common/mitouroku.png);
+                }
+            }
+            &__fake {
+                width: 100%;
+                padding: 6px 13px;
+                border: 1px solid #ccc;
+                background-color: #eee;
+                color: #666;
+            }
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+    .section {
+        &__form {
+            dt {
+                &.must {
+                    &::after {
+                    }
+                }
+            }
+        }
+    }
+}
+
+// スマホ 横
+// TAB 縦
+// TAB 横
+// PC
+@media(min-width: 768px) {
+    .section {
+        &__form {
+            dl {
+                display: flex;
+                align-items: flex-start;
+                gap: 0 10px;
+            }
+            dt {
+                width: 30%;
+                padding-top: 8px;
+            }
+            dd {
+                width: 70%;
+            }
+        }
+    }
+}

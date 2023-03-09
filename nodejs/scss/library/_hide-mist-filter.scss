@@ -1,0 +1,57 @@
+@use '../config/variable' as var;
+@use '../config/mixin' as mixin;
+@use '../config/fontawesomw' as fa;
+
+* {
+    &:has(> .hide-mist-filter) {
+        position: relative;
+        height: 150px;
+        overflow-y: hidden;
+        z-index: 10;
+        padding-bottom: 30px;
+    }
+    &:has(> .hide-mist-filter[data-toggle="on"]) {
+        height: auto;
+    }
+}
+.hide-mist-filter {
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 20%, rgba(255,255,255,0) 100%);
+    & > div {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        z-index: 12;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        & > i {
+            font-style: normal;
+            &::after {
+                @include fa.arrowDown;
+                color: var.$freshGreen;
+            }
+        }
+    }
+    &[data-toggle="on"] {
+        background: none;
+        height: 40px;
+        top: auto;
+        bottom: 0;
+        padding-bottom: 30px;
+        & > div > i {
+            &::after {
+                @include fa.arrowUp;
+            }
+        }
+    }
+}

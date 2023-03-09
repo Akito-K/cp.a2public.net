@@ -1,0 +1,23 @@
+.sticky-table { // table
+    // 縦スクロール時に固定する
+    thead  {
+        th {
+            position: sticky;
+            top: 0;
+            /* tbody内のセルより手前に表示する */
+            z-index: 1;
+        }
+    }
+
+    // 横スクロール時に固定する
+    th:first-child {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+    }
+    // ヘッダー行内の他のセルより手前に表示する
+    thead th:first-child {
+        z-index: 2;
+    }
+
+}

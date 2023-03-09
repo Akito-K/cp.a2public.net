@@ -1,0 +1,50 @@
+@mixin arrowRight() {
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin arrowUp() {
+    content: "\f106";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin arrowDown() {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin plus() {
+    content: "\2b";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin download() {
+    content: "\f019";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin close() {
+    content: "\f00d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin noCheck() {
+    content: "\f0c8";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin checked() {
+    content: "\f14a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin upRightFromSquare() {
+    content: "\f35d";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin mobile() {
+    content: "\f3cf";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}

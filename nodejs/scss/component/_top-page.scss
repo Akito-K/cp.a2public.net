@@ -1,0 +1,56 @@
+@use '../config/variable' as var;
+@use '../config/mixin' as mixin;
+
+// 共通
+@media all {
+    .top-page {
+        &__buttons,
+        &__button {
+            padding: 20px 10px 0;
+            @include mixin.wrapper(500px);
+            display: flex;
+            gap: 10px;
+            a {
+                width: 50%;
+                height: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                em {
+                    font-style: normal;
+                    font-size: 22px;
+                    letter-spacing: 0.1em;
+                    margin-left: 0.1em;
+                }
+                span {
+                    font-size: 40px;
+                    font-weight: bold;
+                    letter-spacing: 0.3em;
+                    margin-left: 0.3em;
+                }
+            }
+        }
+        &__button {
+            padding-top: 10px;
+            a {
+                width: 100%;
+                height: 100px;
+            }
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}

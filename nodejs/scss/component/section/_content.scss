@@ -1,0 +1,56 @@
+@use '../../config/variable' as var;
+@use '../../config/mixin' as mixin;
+@use '../../config/fontawesomw' as fa;
+
+// 共通
+@media all {
+    .section {
+        &__content {
+            margin-bottom: 20px;
+            background-color: var.$white;
+            &--bg-gray {
+                background-color: var.$lightGray;
+            }
+            ul {
+                li {
+                    border-bottom: 1px solid var.$lightGray;
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                    a {
+                        display: block;
+                        padding: 12px 10px;
+                        text-decoration: none;
+                        font-size: 16px;
+                        &.add-arrow {
+                            position: relative;
+                            &::after {
+                                @include fa.arrowRight;
+                                position: absolute;
+                                right: 20px;
+                                top: 50%;
+                                margin-top: -8px;
+                                color: var.$freshGreen;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+    .section {
+    }
+}
+
+// スマホ 横
+// TAB 縦
+// TAB 横
+// PC
+@media(min-width: 768px) {
+    .section {
+    }
+}
