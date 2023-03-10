@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php-web60018:
-    image: niclab/php8.1
+    image: niclab/php8.0
     platform: linux/x86_64
     container_name: php-web60018
     working_dir: /var/www

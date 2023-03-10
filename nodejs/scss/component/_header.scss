@@ -1,0 +1,63 @@
+@use '../config/variable' as var;
+@use '../config/mixin' as mixin;
+
+// 共通
+@media all {
+    .header {
+        * {
+        }
+        &__logo {
+            height: 80px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__img {
+                width: 208px;
+                margin: 0;
+                display: block;
+            }
+            &__powered {
+                width: calc(100% - 208px);
+                text-align: right;
+                font-size: 14px;
+                margin: 0;
+            }
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            background-color: var.$softOrange;
+            &__name {
+                color: var.$white;
+                margin: 0;
+            }
+
+            position: relative;
+            &__navi {
+                position: absolute;
+                right: 15px;
+                top: 5px;
+                font-size: 26px;
+            }
+        }
+
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}

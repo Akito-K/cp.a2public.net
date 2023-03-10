@@ -1,16 +1,13 @@
 @forward 'common';
-@forward 'sizes';
 @forward 'btn';
 @forward 'form';
-@forward 'fake-checkbox';
 @forward 'ajaxing';
 @forward 'media';
 
-@use 'section';
-
-@forward 'page-title';
+@forward 'header';
+@forward 'section';
 @forward 'footer';
-@forward 'top-page';
 
-@forward 'modal';
-@forward 'modal-files';
+@forward 'search';
+@forward 'sort';
+@forward 'item';

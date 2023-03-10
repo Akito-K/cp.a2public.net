@@ -1,4 +1,4 @@
 'use strict';
-import FileUpload from './class/file_upload';
+import Copy from './class/copy';
 
-new FileUpload;
+new Copy;

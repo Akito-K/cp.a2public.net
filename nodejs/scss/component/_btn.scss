@@ -5,132 +5,26 @@
 // 共通
 @media all {
     .btn {
-        display: inline-block;
-        text-align: center;
-        border: none;
-        color: var.$white;
-        border-radius: 5px;
-        font-size: 14px;
-        padding: 10px 0;
-        text-decoration: none;
-        &:hover {
-            opacity: var.$opacity;
-            color: var.$white;
-        }
-        &--size {
-            &--xlg {
-                width: 100%;
-                max-width: 500px;
-                font-size: 18px;
-                font-weight: bold;
-                padding: 11px 0;
-            }
-            &--file-upload {
-                width: 100%;
-                font-size: 14px;
-                padding: 9px 0;
-            }
-            &--lg {
-                width: 160px;
-            }
-            &--md {
-                width: 100px;
-            }
-            &--xmd {
-                width: 100px;
-                padding: 4px 0;
-            }
-            &--sm {
-                width: 70px;
-            }
-        }
-        &--color {
-            &--rich-dark-green {
-                background-color: var.$adminGreen;
-            }
-            &--dark-green {
-                background-color: var.$manageGreen;
-            }
-            &--fresh-green {
-                background-color: var.$freshGreen;
-            }
-            &--blue {
-                background-color: var.$blue;
-            }
-            &--gray {
-                background-color: var.$lightGray;
-            }
-            &--red {
-                background-color: var.$darkRed;
-            }
-            &--fresh-red {
-                background-color: var.$linkRed;
-            }
-            &--soft-orange {
-                background-color: var.$softOrange;
-            }
-            &--mirror-green {
-                box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-                color: var.$freshGreen;
-                background-color: var.$white;
-                &:hover {
-                    color: var.$freshGreen;
-                }
-            }
-            &--mirror-orange {
-                box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-                color: var.$softOrange;
-                background-color: var.$white;
-                &:hover {
-                    color: var.$softOrange;
-                }
-            }
-        }
+    }
+    .btn-action-copied {
+        position: relative;
+        &::after {
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            content: "クリップボードにコピーしました";
+            width: 200px;
+            display: block;
+            padding: 6px 12px;
+            border: 1px solid limegreen;
+            border-radius: 4px;
+            background-color: #fff;
+            color: limegreen;
 
-        &--type--daily {
-            font-weight: bold;
-            span {
-                font-size: 14px;
-            }
-        }
-
-        &.add-icon {
-            position: relative;
-            &::after {
-                position: absolute;
-                right: 10px;
-                top: 12px;
-                color: var.$freshGreen;
-            }
-            &--color-orange {
-                &::after {
-                    color: var.$softOrange;
-                }
-            }
-            &--plus::after {
-                @include fa.plus;
-            }
-            &--arrow::after {
-                @include fa.arrowRight;
-            }
-            &--download::after {
-                @include fa.download;
-            }
-            &--lightbox::after {
-                @include fa.upRightFromSquare;
-            }
-            &--mobile::after {
-                @include fa.mobile;
-            }
-        }
-        &.add-icon-prev {
-            &::before {
-                color: var.$white;
-                padding-right: 10px;
-            }
-            &--plus::before {
-                @include fa.plus;
-            }
+            animation-name: fadeOut;
+            animation-duration: 1.5s;
+            animation-delay: .5s;
+            animation-fill-mode: forwards;
         }
     }
 }

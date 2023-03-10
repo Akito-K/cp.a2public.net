@@ -48,3 +48,13 @@
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
 }
+@mixin sortAsc() {
+    content: "\f0d8";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+@mixin sortDesc() {
+    content: "\f0d7";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}

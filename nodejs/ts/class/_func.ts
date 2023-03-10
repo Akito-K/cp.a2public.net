@@ -1,36 +1,36 @@
 'use strict';
 export class Func {
-    static wdays = {
-        0: '日',
-        1: '月',
-        2: '火',
-        3: '水',
-        4: '木',
-        5: '金',
-        6: '土',
-    };
 
-    static getExtention( filename ): string {
-        let types = filename.split('.');
+    // クリップボードにコピー
+    static copyToClipboard(string){
+        // 空div 生成
+        var tmp = document.createElement("div");
+        // 選択用のタグ生成
+        var pre = document.createElement('pre');
 
-        return types[types.length - 1].toLowerCase();
-    }
+        // 親要素のCSSで user-select: none だとコピーできないので書き換える
+        pre.style.webkitUserSelect = 'auto';
+        pre.style.userSelect = 'auto';
 
-    static numberFormat( number ): string {
-        return number.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g , '$1,');
-    }
+        tmp.appendChild(pre).textContent = string;
 
-    static unitFormat(number, unit = "B"): string {
-        let str = number;
-        if(number > 1*1000*1000*1000){
-            str = Func.numberFormat( (number/1000/1000/1000).toFixed(2) ) + "G";
-        }else if(number > 1*1000*1000){
-            str = Func.numberFormat( (number/1000/1000).toFixed(2) ) + "M";
-        }else if(number > 1*1000){
-            str = Func.numberFormat( (number/1000).toFixed(2) ) + "K";
-        }
+        // 要素を画面外へ
+        var s = tmp.style;
+        s.position = 'fixed';
+        s.right = '200%';
 
-        return str + unit;
+        // body に追加
+        document.body.appendChild(tmp);
+        // 要素を選択
+        document.getSelection().selectAllChildren(tmp);
+
+        // クリップボードにコピー
+        var result = document.execCommand("copy");
+
+        // 要素削除
+        document.body.removeChild(tmp);
+
+        return result;
     }
 
     static inArray(needle, haystack): boolean {
@@ -43,37 +43,6 @@ export class Func {
         return result;
     }
 
-    static dateFormat(date, format='Y-m-d H:i:s'): string {
-        const year    = date.getFullYear();
-        const month   = date.getMonth() + 1;
-        const day     = date.getDate();
-        const hour    = date.getHours();
-        const minutes = date.getMinutes();
-        const second  = date.getSeconds();
-
-        return format.replace('Y', year)
-                    .replace('m', Func.sprintf(month, 2))
-                    .replace('d', Func.sprintf(day, 2))
-                    .replace('n', month)
-                    .replace('j', day)
-                    .replace('H', hour)
-                    .replace('i', minutes)
-                    .replace('s', second);
-    }
-
-    static sprintf(num: number, len: number): string{
-        if( String(num).length >= len ){
-            return String(num);
-        }else{
-            const zeros = len - String(num).length;
-            let str = "";
-            for( let i:number = 0; i<zeros; i++){
-                str += "0";
-            }
-            return str + String(num);
-        }
-    }
-
     static number( val ): number {
         val = val.replace(/[^0-9]/g, '');
         if( isNaN(val) ){
@@ -81,27 +50,6 @@ export class Func {
         }else{
             return Number(val);
         }
-    }
-
-    static setAttributes(selector, attribute, value){
-        const elms = document.querySelectorAll(selector);
-        elms.forEach( (elm, k) => {
-            elm.setAttribute(attribute, value);
-        });
-    }
-
-    static addClass(selector, className){
-        const elms = document.querySelectorAll(selector);
-        elms.forEach( (elm, k) => {
-            elm.classList.add(className);
-        });
-    }
-
-    static removeClass(selector, className){
-        const elms = document.querySelectorAll(selector);
-        elms.forEach( (elm, k) => {
-            elm.classList.remove(className);
-        });
     }
 
     static showAjaxing(name){
@@ -112,19 +60,6 @@ export class Func {
     static hideAjaxing(name){
         const ajaxing = document.getElementById('bulletAjaxing' + name);
         ajaxing.classList.remove('show');
-    }
-
-    static classLists(elms, action, className){
-        if(elms.length === 0){
-            return;
-        }
-        elms.forEach( (v: HTMLInputElement, k) => {
-            if(action === 'add'){
-                v.classList.add(className);
-            }else if(action === 'remove'){
-                v.classList.remove(className);
-            }
-        });
     }
 
     static fadeIn(node, duration) {
