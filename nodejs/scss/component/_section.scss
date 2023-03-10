@@ -6,8 +6,9 @@
 @media all {
     .section {
         height: auto;
-        min-height: calc(100vh - 159px);
+        min-height: calc(100vh - 159px - 261px);
         padding: 30px 10px;
+        @include mixin.wrapper();
     }
 }
 

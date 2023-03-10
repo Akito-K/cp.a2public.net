@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->mediumInteger('text_id')->unsigned()->nullable();
+            $table->mediumInteger('text_id')->unsigned();
             $table->string('name', 32);
             $table->timestamps();
             $table->softDeletes();

@@ -1,0 +1,26 @@
+@use '../config/variable' as var;
+
+// 共通
+@media all {
+    .more {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        i {
+            font-size: 32px;
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}

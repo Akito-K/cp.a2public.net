@@ -13,12 +13,16 @@ class AsyncController extends Controller
         $text_id  = $request->input('text_id');
         $new_text = $request->input('new_text');
 
-        $data = Text::find($text_id);
+        if($text_id){
+            $data = Text::find($text_id);
+        }else{
+            $data = new Text;
+        }
         $data->text = $new_text;
         $data->save();
 
         self::sendResult(true, [
-            'textId'  => $text_id,
+            'textId'  => $data->id,
             'newText' => $new_text,
             'callback' => 'updated'
         ]);

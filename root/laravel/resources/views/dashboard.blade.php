@@ -2,20 +2,20 @@
 @section('content')
 
     <div class="search">
-        {!! Form::text('', '', ['placeholder' => 'タグ、テキストで絞り込む']) !!}
+        {!! Form::text('', '', ['id' => 'paramSearchInput', 'placeholder' => 'タグ、テキストで絞り込む']) !!}
     </div>
 
-    <div class="sort">
-        <button type="button" class="trigSort" data-sort="text" data-order="asc">テキストでソート <i></i></button>
-        <button type="button" class="trigSort" data-sort="date" data-order="asc">更新日時でソート <i></i></button>
-    </div>
+{{--    <div class="sort">--}}
+{{--        <button type="button" id="trigSortText" data-order="asc">テキストでソート <i></i></button>--}}
+{{--        <button type="button" id="trigSortDate" data-order="asc">更新日時でソート <i></i></button>--}}
+{{--    </div>--}}
 
-    <div class="item">
+    <div class="item" id="trigItemBoxes">
         @forelse($texts as $text)
-            <div class="item__box" data-id="{{ $text->id }}">
+            <div class="item__box bulletItemBox" data-id="{{ $text->id }}">
                 <div class="item__box__value">
                     <div class="item__box__body">
-                        <span class="item__box__body__text bulletText show">{{ $text->text }}</span>
+                        <span class="item__box__body__text bulletText show">{!! nl2br(e($text->text)) !!}</span>
                         {!! Form::textarea('', $text->text, ['class' => 'item__box__body__input paramTextInput']) !!}
                     </div>
                     <div class="item__box__action bulletActionGroup show">
@@ -29,7 +29,7 @@
                         <i class="fa-solid fa-trash-can trigDelete"></i>
                     </div>
                 </div>
-                <div class="item__box__tags">
+                <div class="item__box__tags bulletTags">
                     @isset($tags[$text->id])
                         @forelse($tags[$text->id] as $tag)
                             <div class="item__box__tag" data-tag-id="{{ $tag->id }}">
@@ -43,6 +43,9 @@
         @empty
             <p>No Data!</p>
         @endforelse
+    </div>
+    <div class="more">
+        <i class="fa-regular fa-square-plus" id="trigAddItemBox"></i>
     </div>
 
 

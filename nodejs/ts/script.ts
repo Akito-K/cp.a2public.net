@@ -1,4 +1,4 @@
 'use strict';
-import Copy from './class/copy';
+import CopyNPaste from './class/copy_n_paste';
 
-new Copy;
+new CopyNPaste;

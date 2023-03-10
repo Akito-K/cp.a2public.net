@@ -92,6 +92,11 @@ export class Func {
         });
     }
 
+    static hasClass(targetClassName, event){
+        return event.target.className.indexOf(targetClassName) >= 0;
+    }
+
+
 
 }
 export default Func;

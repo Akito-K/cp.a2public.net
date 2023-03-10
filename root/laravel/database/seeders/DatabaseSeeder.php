@@ -31,22 +31,6 @@ class DatabaseSeeder extends Seeder
             'id' => 1,
             'text' => 'ホゲホゲ',
         ]);
-        Text::create([
-            'id' => 2,
-            'text' => 'ふがふが',
-        ]);
-        Text::create([
-            'id' => 3,
-            'text' => 'Fooooooo',
-        ]);
-        Text::create([
-            'id' => 4,
-            'text' => 'Barrrrrrrrrr',
-        ]);
-        Text::create([
-            'id' => 5,
-            'text' => 'サンプルテキスト',
-        ]);
         Tag::create([
             'text_id' => 1,
             'name' => '陰山',
@@ -59,6 +43,5 @@ class DatabaseSeeder extends Seeder
             'text_id' => 1,
             'name' => 'お試し',
         ]);
-
     }
 }

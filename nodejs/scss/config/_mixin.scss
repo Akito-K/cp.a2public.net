@@ -1,6 +1,6 @@
 @use 'animation';
 
-@mixin wrapper($maxWidth: 600px) {
+@mixin wrapper($maxWidth: 500px) {
     width: 100%;
     max-width: $maxWidth;
     margin-left: auto;

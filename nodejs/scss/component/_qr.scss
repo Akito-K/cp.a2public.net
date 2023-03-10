@@ -1,0 +1,30 @@
+@use '../config/variable' as var;
+
+// 共通
+@media all {
+    .qr {
+        margin-bottom: 30px;
+        text-align: center;
+        &__message {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        img {
+            width: 200px;
+        }
+    }
+}
+
+// スマホ 縦
+@media(max-width: 767px) {
+}
+
+// スマホ 横
+// TAB 縦
+@media(min-width: 768px) and (max-width: 1024px) {
+}
+
+// TAB 横
+// PC
+@media(min-width: 1025px) {
+}
